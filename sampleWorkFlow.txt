@@ -1,0 +1,27 @@
+Installed pip3 and used it for the lifetime of this proj.
+
+sudo apt-get install graphviz
+
+sudo pip3 install diagrams
+
+sudo pip3 install pipenv
+
+pipenv install diagrams (this will read PIP.lock file and build dependicies?)
+
+pipenv shell 
+
+resource:https://diagrams.mingrammer.com/docs/getting-started/examples
+https://python-poetry.org/docs/ (ALTERNATIVE method to pipenv: oetry is a tool for dependency management and packaging in Python. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.)
+
+vim diagram.py:
+from diagrams import Diagram
+from diagrams.aws.compute import EC2
+from diagrams.aws.database import RDS
+from diagrams.aws.network import ELB
+
+with Diagram("Web Service", show=False):
+    ELB("lb") >> EC2("web") >> RDS("userdb")
+
+It will be saved as web_service.png on your working directory. :)
+
+
